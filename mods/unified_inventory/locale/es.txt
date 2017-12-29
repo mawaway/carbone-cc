@@ -1,12 +1,12 @@
 # Translation by Diego Martínez <kaeza>
 
+### api.lua ###
+Digging (by chance) = Excavado (por azar)
+
 # Template
 ### bags.lua ###
 Bags = Bolsas
-Bag 1 = Bolsa 1
-Bag 2 = Bolsa 2
-Bag 3 = Bolsa 3
-Bag 4 = Bolsa 4
+Bag @1 = Bolsa @1
 Small Bag = Bolsa Pequeña
 Medium Bag = Bolsa Mediana
 Large Bag = Bolsa Grande
@@ -31,7 +31,7 @@ Time of day set to 6am = Hora del día cambiada a 6AM
 You don't have the settime priviledge! = ¡No tienes el privilegio `settime'!
 Time of day set to 9pm = Hora del día cambiada a 9PM
 This button has been disabled outside of creative mode to prevent accidental inventory trashing. Use the trash slot instead. = Éste botón ha sido deshabilitado para prevenir la destrucción accidental del inventario.\nUsa la ranura para basura en su lugar.
-Inventory Cleared! = ¡Inventario limpio!
+Inventory cleared! = ¡Inventario limpio!
 Crafting = Elaboración
 Trash: = Basura:
 Refill: = Rellenar:

@@ -2,6 +2,15 @@
 
 local modpath = minetest.get_modpath(minetest.get_current_modname())
 local worldpath = minetest.get_worldpath()
+local mygettext
+if rawget(_G, "intllib") then
+	mygettext = intllib.Getter()
+else
+	function mygettext(s, ...)
+		local t = { ... }
+		return (s:gsub("@(%d+)", function(n) return t[tonumber(n)] end))
+	end
+end
 
 -- Data tables definitions
 unified_inventory = {
@@ -31,10 +40,14 @@ unified_inventory = {
 	default = "craft",
 
 	-- intllib
-	gettext = rawget(_G, "intllib") and intllib.Getter() or function(s) return s end,
+	gettext = mygettext,
+	fgettext = function(...) return minetest.formspec_escape(mygettext(...)) end,
 
 	-- "Lite" mode
 	lite_mode = minetest.setting_getbool("unified_inventory_lite"),
+	
+	-- Trash enabled
+	trash_enabled = (minetest.setting_getbool("unified_inventory_trash") ~= false),
 
 	pagecols = 8,
 	pagerows = 10,
@@ -47,25 +60,18 @@ unified_inventory = {
 	form_header_y = 0
 }
 
-if unified_inventory.lite_mode then
-	unified_inventory.pagecols = 4
-	unified_inventory.pagerows = 6
-	unified_inventory.page_y = 0.25
-	unified_inventory.formspec_y = 0.47
-	unified_inventory.main_button_x = 8.2
-	unified_inventory.main_button_y = 6.5
-	unified_inventory.craft_result_x = 2.8
-	unified_inventory.craft_result_y = 3.4
-	unified_inventory.form_header_y = -0.1
-end
-
-unified_inventory.items_per_page = unified_inventory.pagecols * unified_inventory.pagerows
-
 -- Disable default creative inventory
-if rawget(_G, "creative_inventory") then
-	function creative_inventory.set_creative_formspec(player, start_i, pagenum)
+local creative = rawget(_G, "creative") or rawget(_G, "creative_inventory")
+if creative then
+	function creative.set_creative_formspec(player, start_i, pagenum)
 		return
 	end
+end
+
+-- Disable sfinv inventory
+local sfinv = rawget(_G, "sfinv")
+if sfinv then
+	sfinv.enabled = false
 end
 
 dofile(modpath.."/group.lua")
@@ -74,13 +80,12 @@ dofile(modpath.."/internal.lua")
 dofile(modpath.."/callbacks.lua")
 dofile(modpath.."/register.lua")
 
-if not unified_inventory.lite_mode then
+if minetest.setting_getbool("unified_inventory_bags") ~= false then
 	dofile(modpath.."/bags.lua")
 end
 
 dofile(modpath.."/item_names.lua")
 
-if minetest.get_modpath("datastorage") and not unified_inventory.lite_mode then
+if minetest.get_modpath("datastorage") then
 	dofile(modpath.."/waypoints.lua")
 end
-

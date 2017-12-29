@@ -2,10 +2,7 @@
 
 ### bags.lua ###
 Bags = Plecaki
-Bag 1 = Plecak 1
-Bag 2 = Plecak 2
-Bag 3 = Plecak 3
-Bag 4 = Plecak 4
+Bag @1 = Plecak @1
 Small Bag = Maly plecak
 Medium Bag = Sredni plecak
 Large Bag = Duzy plecak
@@ -30,7 +27,7 @@ Time of day set to 6am = Czas ustawiony na 6:00
 You don't have the settime priviledge! = Nie masz uprawnien do zmiany czasu (settime)!
 Time of day set to 9pm = Czas ustawiony na 21:00
 This button has been disabled outside of creative mode to prevent accidental inventory trashing.\nUse the trash slot instead. = 
-Inventory Cleared! = 
+Inventory cleared! = 
 Crafting = 
 Trash: = Smietnik:
 Refill: = Uzupelnianie:
