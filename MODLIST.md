@@ -6,3 +6,4 @@ unified inventory
 unified dyes
 carts
 player-api
+world-edit

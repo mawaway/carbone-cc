@@ -27,6 +27,12 @@ Sets a region defined by positions `pos1` and `pos2` to `node_name`. To clear a 
 
 Returns the number of nodes set.
 
+### `count = worldedit.set_param2(pos1, pos2, param2)`
+
+Sets the param2 values of all nodes in a region defined by positions `pos1` and `pos2` to `param2`.
+
+Returns the number of nodes set.
+
 ### count = worldedit.replace(pos1, pos2, searchnode, replacenode)
 
 Replaces all instances of `searchnode` with `replacenode` in a region defined by positions `pos1` and `pos2`.
@@ -42,6 +48,12 @@ Returns the number of nodes replaced.
 ### count = worldedit.copy(pos1, pos2, axis, amount)
 
 Copies the region defined by positions `pos1` and `pos2` along the `axis` axis ("x" or "y" or "z") by `amount` nodes.
+
+Returns the number of nodes copied.
+
+### count = worldedit.copy2(pos1, pos2, off)
+
+Copies the region defined by positions `pos1` and `pos2` by the offset vector `off`.
 
 Returns the number of nodes copied.
 
@@ -109,6 +121,12 @@ Primitives
 ----------
 Contained in primitives.lua, this module allows the creation of several geometric primitives.
 
+### count = worldedit.cube(pos, width, height, length, node_name, hollow)
+
+Adds a cube with its ground level centered at `pos`, the dimensions `width` x `height` x `length`, composed of `node_name`.
+
+Returns the number of nodes added.
+
 ### count = worldedit.sphere(pos, radius, node_name, hollow)
 
 Adds a sphere centered at `pos` with radius `radius`, composed of `node_name`.
@@ -121,15 +139,15 @@ Adds a dome centered at `pos` with radius `radius`, composed of `node_name`.
 
 Returns the number of nodes added.
 
-### count = worldedit.cylinder(pos, axis, length, radius, node_name, hollow)
+### count = worldedit.cylinder(pos, axis, length, radius1, radius2, node_name, hollow)
 
-Adds a cylinder at `pos` along the `axis` axis ("x" or "y" or "z") with length `length` and radius `radius`, composed of `node_name`.
+Adds a cylinder-like at `pos` along the `axis` axis ("x" or "y" or "z") with length `length`, base radius `radius1` and top radius `radius2`, composed of `node_name`.
 
 Returns the number of nodes added.
 
-### count = worldedit.pyramid(pos, axis, height, node_name)
+### count = worldedit.pyramid(pos, axis, height, node_name, hollow)
 
-Adds a pyramid centered at `pos` along the `axis` axis ("x" or "y" or "z") with height `height`.
+Adds a pyramid centered at `pos` along the `axis` axis ("x" or "y" or "z") with height `height`, composed of `node_name`.
 
 Returns the number of nodes added.
 
@@ -175,7 +193,7 @@ Returns the number of nodes restored.
 
 Serialization
 -------------
-Contained in serialization.lua, this module allows regions of nodes to be serialized and deserialized to formats suitable for use outside MineTest.
+Contained in serialization.lua, this module allows regions of nodes to be serialized and deserialized to formats suitable for use outside Minetest.
 
 ### version, extra_fields, content = worldedit.read_header(value)
 
