@@ -11,7 +11,7 @@ and can be found [here](https://github.com/mawaway/carbone-cc).
 
 You can check the MODLIST.md file to see all installed mods
 
-### How do I set this up?
+## How do I set this up?
 
 Go to games/ directory, then clone this repository:
 	git clone https://github.com/mawaway/carbone-cc.git
