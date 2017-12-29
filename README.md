@@ -1,4 +1,4 @@
-##Carbone-cc
+Carbone-cc
 ============
 
 ### What's Carbone-cc?
