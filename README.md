@@ -1,20 +1,11 @@
-Carbone-cc
+Carbone-ng-fixed
 ============
 
-### What's Carbone-cc?
+### What's this?
 
-Carbone-cc (Carbone-carboncopy) is a fork of [carbone-ng](https://github.com/Calinou/carbone-ng).
-It is a subgame for Minetest. Carbone-cc was created by mawaway 
-and can be found [here](https://github.com/mawaway/carbone-cc).
+This is a working version of Carbone-ng. The only change is the menu
+artwork and mods/default/functions.lua to fix a call to a changed Minetest 
+function. 
 
-### How do I set this up?
-
-Go to games/ directory, then clone this repository:
-	git clone https://github.com/mawaway/carbone-cc.git
-
-If you want the latest features, pull from the dev branch:
-	git pull origin dev
-
-The Minetest Engine can be found in:
-  https://github.com/minetest/minetest/
-
+If you want an updated Carbone (updated, and newer different mods) see
+[Carbone-cc](https://github.com/mawaway/carbone-cc).
