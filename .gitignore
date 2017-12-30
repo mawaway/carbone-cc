@@ -4,7 +4,11 @@
 *bak*
 tags
 *.vim
+
 *.git
+*.png
+*.jpg
+*.jpeg
 
 ## Files related to minetest development cycle
 *.patch

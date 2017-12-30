@@ -7,3 +7,4 @@ unified dyes
 carts
 player-api
 world-edit
+throwing enhanced
